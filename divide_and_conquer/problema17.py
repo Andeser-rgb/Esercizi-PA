@@ -1,10 +1,7 @@
 from typing import List
 
 
-# Complessita O(log n)
-# T(n) = T(n) + b
-# a = 1, c = 2, k = 0
-# a = c^k
+# Complessita O(n)
 def find_el_helper(array: List[List[int]], k: int, row: int, col: int):
     if row >= len(array) or col < 0:
         return None
