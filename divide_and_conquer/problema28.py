@@ -17,7 +17,7 @@ def find_subsequence(a: str, b: str, k: int):
 
 
 # Complessita O(nlogn)
-# T(n) = T(n / 2) + bn0
+# T(n) = T(n / 2) + b + n0
 # a = 1, c = 2, k = 1
 def find_max_subsequence_helper(a: str, b: str, s: int, d: int):
     if s == d:
@@ -36,7 +36,7 @@ def find_max_subsequence(a: str, b: str):
 
 
 def main():
-    sol = find_max_subsequence("abababababac", "abc")
+    sol = find_max_subsequence("abababababac", "d")
     print(sol)
     return
 
