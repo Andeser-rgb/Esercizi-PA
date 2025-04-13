@@ -3,21 +3,15 @@ from typing import List
 
 # Time complexity
 # O(nk)
-def solve(n: int, k: int, memo: List[[int]]):
-    if memo[n][k] is None:
-        if k > n:
-            raise ValueError("k can't be greater than n")
-        if k < 0:
-            raise ValueError("k can't be negative")
-        if k == 0:
-            memo[n][k] = 1
-        elif n == k:
-            memo[n][k] = 0
+def solve(i: int, j: int, memo: List[[int]]):
+    if i < 0 or j < 0:
+        raise ValueError("i and j can't be negative")
+    if memo[i][j] is None:
+        if i == 0 or j == 0:
+            memo[i][j] = 1
         else:
-            memo[n][k] = (k + 1) * solve(n - 1, k, memo) + (n - k) * solve(
-                n - 1, k - 1, memo
-            )
-    return memo[n][k]
+            memo[i][j] = i * solve(i - 1, j, memo) + (i + j) * solve(i - 1, j - 1, memo)
+    return memo[i][j]
 
 
 def main():
