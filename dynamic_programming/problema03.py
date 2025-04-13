@@ -4,17 +4,19 @@ from typing import List
 # Time complexity
 # O(nk)
 def solve(n: int, k: int, memo: List[[int]]):
-    if k > n:
-        raise ValueError("k can't be greater than n")
-    if k < 0:
-        raise ValueError("k can't be negative")
     if memo[n][k] is None:
+        if k > n:
+            raise ValueError("k can't be greater than n")
+        if k < 0:
+            raise ValueError("k can't be negative")
         if k == 0:
-            memo[n][k] = 0
-        elif n == k:
             memo[n][k] = 1
+        elif n == k:
+            memo[n][k] = 0
         else:
-            memo[n][k] = k * solve(n - 1, k, memo) + solve(n - 1, k - 1, memo)
+            memo[n][k] = (k + 1) * solve(n - 1, k, memo) + (n - k) * solve(
+                n - 1, k - 1, memo
+            )
     return memo[n][k]
 
 
