@@ -12,7 +12,7 @@ def solve(crediti: int, d: List[int], c: List[int], e_ind: int, memo: List[[int]
     if crediti <= 0:
         return 0
     if e_ind < 0:
-        return float("-inf")
+        return float("inf")
     if memo[crediti][e_ind] is None:
         memo[crediti][e_ind] = min(
             solve(crediti, d, c, e_ind - 1, memo),
