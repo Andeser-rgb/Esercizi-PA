@@ -1,11 +1,6 @@
 from typing import List
 
 
-x = 4
-y = 2
-z = 5
-
-
 # Time complexity
 # O(Cn)
 def solve(crediti: int, d: List[int], c: List[int], e_ind: int, memo: List[[int]]):

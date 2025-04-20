@@ -1,11 +1,6 @@
 from typing import List
 
 
-x = 4
-y = 2
-z = 5
-
-
 # Time complexity
 # O(n^2)
 def solve(n: int, p: List[int], memo: List[int]):
